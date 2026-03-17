@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<scenario>
+    <looks>
+        <look name="black" gray="0.01" roughness="0.2" metalness="0.0"/>
+        <look name="yellow" rgb="1.0 0.9 0.0" roughness="0.3"/>
+    </looks>
+
+	<looks>
+		<look name="blue" rgb="0.0 0.3 0.8" roughness="0.0"/>
+        <look name="transparent" gray="1.0" roughness="0.0" metalness="0.0"/>
+        <look name="yellow" rgb="1.0 0.0 0.0" roughness="1.0"/>
+		<look name="black" gray="0.01" roughness="0.3" metalness="0.2" />
+		<look name="dark_gray" rgb="0.1 0.1 0.1" roughness="0.0" metalness="0.0"/>
+		<look name="white" rgb="1.0 1.0 1.0" roughness="0.0"/>
+		<look name="gray" gray="0.5" roughness="0.08" metalness="1.0" reflection="0.1"/>
+    </looks>    
+
+	<robot name="catamaran" fixed="false" self_collisions="false">
+		<base_link name="Vehicle" type="compound" physics="submerged">
+			<external_part name="cuerpo_dch" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="catamaran/cuerpo_dch_phy.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</physical>
+				<visual>
+					<mesh filename="catamaran/cuerpo_dch.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</visual>
+				<material name="Polyamid"/>
+				<mass value="20.0"/>
+				<look name="white"/>
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			</external_part>
+			<external_part name="cuerpo_izq" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="catamaran/cuerpo_izq_phy.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</physical>
+				<visual>
+					<mesh filename="catamaran/cuerpo_izq.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</visual>
+				<material name="Polyamid"/>
+				<mass value="20.0"/>
+				<look name="white"/>
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			</external_part>
+			<external_part name="barra_trasera" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="catamaran/barra_trasera.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</physical>
+				<visual>
+					<mesh filename="catamaran/barra_trasera.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</visual>
+				<material name="Polyamid"/>
+				<mass value="1.0"/>
+				<look name="dark_gray"/>
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			</external_part>
+			<external_part name="barra_delantera" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="catamaran/barra_delantera.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</physical>
+				<visual>
+					<mesh filename="catamaran/barra_delantera.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</visual>
+				<material name="Polyamid"/>
+				<mass value="1.0"/>
+				<look name="dark_gray"/>
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			</external_part>
+			<external_part name="base_tela" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="catamaran/base_tela.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</physical>
+				<visual>
+					<mesh filename="catamaran/base_tela.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</visual>
+				<material name="Polyamid"/>
+				<mass value="0.1"/>
+				<look name="black"/>
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			</external_part>
+			<external_part name="barras_abajo" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="catamaran/barras_abajo_phy.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</physical>
+				<visual>
+					<mesh filename="catamaran/barras_abajo.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</visual>
+				<material name="Polyamid"/>
+				<mass value="2.0"/>
+				<look name="gray"/>
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			</external_part>
+			<external_part name="barras_arriba" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="catamaran/barras_arriba_phy.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</physical>
+				<visual>
+					<mesh filename="catamaran/barras_arriba.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</visual>
+				<material name="Polyamid"/>
+				<mass value="2.0"/>
+				<look name="gray"/>
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			</external_part>
+			<external_part name="caja_izq" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="catamaran/caja_izq.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</physical>
+				<visual>
+					<mesh filename="catamaran/caja_izq.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</visual>
+				<material name="Polyamid"/>
+				<mass value="4.0"/>
+				<look name="white"/>
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			</external_part>
+			<external_part name="caja_dch" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="catamaran/caja_dch.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</physical>
+				<visual>
+					<mesh filename="catamaran/caja_dch.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</visual>
+				<material name="Polyamid"/>
+				<mass value="4.0"/>
+				<look name="white"/>
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			</external_part>
+			<external_part name="carcasa_thruster_izq" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="catamaran/carcasa_thruster_izq.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</physical>
+				<visual>
+					<mesh filename="catamaran/carcasa_thruster_izq.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</visual>
+				<material name="Polyamid"/>
+				<mass value="0.3"/>
+				<look name="dark_gray"/>
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			</external_part>
+			<external_part name="carcasa_thruster_dch" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="catamaran/carcasa_thruster_dch.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</physical>
+				<visual>
+					<mesh filename="catamaran/carcasa_thruster_dch.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</visual>
+				<material name="Polyamid"/>
+				<mass value="0.3"/>
+				<look name="dark_gray"/>
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			</external_part>
+			<internal_part name="flotar_dch" type="model" physics="submerged" buoyant="true">
+				<physical>
+					<mesh filename="catamaran/flotar_dch.obj" scale="0.9"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</physical>
+				<visual>
+					<mesh filename="catamaran/flotar_dch.obj" scale="0.0"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</visual>
+				<material name="Foam"/>
+				<look name="white"/>
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			</internal_part>
+			<internal_part name="flotar_izq" type="model" physics="submerged" buoyant="true">
+				<physical>
+					<mesh filename="catamaran/flotar_izq.obj" scale="0.9"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</physical>
+				<visual>
+					<mesh filename="catamaran/flotar_izq.obj" scale="0.9"/>
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+				</visual>
+				<material name="Foam"/>
+				<look name="white"/>
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			</internal_part>
+		</base_link>
+
+		<actuator name="Thruster_izq" type="thruster">
+			<origin rpy="0.0 0.0 -1.5708" xyz="-0.621312 -1.10238 -0.400214"/>
+			<specs max_setpoint="${3278.0/60.0*2.0*pi}" inverted_setpoint="true" normalized_setpoint="true"/>
+			<propeller diameter="0.07" right="true">
+				<mesh filename="catamaran/Propeller.obj" scale="1.0"/>
+				<material name="Neutral"/>
+				<look name="propeller"/>
+			</propeller>
+			<link name="Vehicle"/>
+			<rotor_dynamics type="mechanical_pi">
+				<rotor_inertia value="0.05"/>
+				<kp value="0.8"/>
+				<ki value="0.2"/>
+				<ilimit value="2.0"/>
+			</rotor_dynamics>
+			<thrust_model type="fluid_dynamics">
+				<thrust_coeff forward="0.52" reverse="0.48"/>
+				<torque_coeff value="0.001"/>
+			</thrust_model>
+		</actuator>
+
+		<actuator name="Thruster_dch" type="thruster">
+			<origin rpy="0.0 0.0 -1.5708" xyz="0.66128 -1.10238 -0.400214"/>
+			<specs max_setpoint="${3278.0/60.0*2.0*pi}" inverted_setpoint="true" normalized_setpoint="true"/>
+			<propeller diameter="0.07" right="true">
+				<mesh filename="catamaran/Propeller.obj" scale="1.0"/>
+				<material name="Neutral"/>
+				<look name="propeller"/>
+			</propeller>
+			<link name="Vehicle"/>
+			<rotor_dynamics type="mechanical_pi">
+				<rotor_inertia value="0.05"/>
+				<kp value="0.8"/>
+				<ki value="0.2"/>
+				<ilimit value="2.0"/>
+			</rotor_dynamics>
+			<thrust_model type="fluid_dynamics">
+				<thrust_coeff forward="0.52" reverse="0.48"/>
+				<torque_coeff value="0.001"/>
+			</thrust_model>
+		</actuator>
+
+		<sensor name="gps" type="gps" rate="1.0">
+			<link name="Vehicle"/>
+			<origin rpy="3.14 0.0 1.57" xyz="0.0 0.0 0.0"/>
+			<noise ned_position="0.5"/>
+			<ros_publisher topic="/catamaran/gps"/>
+		</sensor>
+
+		<sensor name="camera_front" type="camera" rate="30.0">
+            <link name="Vehicle"/>
+            <origin rpy="-1.57 0.0 0.0" xyz="0.181571 0.716169 0.931382"/>
+            <specs resolution_x="1280" resolution_y="720" horizontal_fov="80.0"/>
+            <ros_publisher topic="/catamaran/camera_front/image_raw"/>
+        </sensor>
+
+		<sensor name="camera_cenital" type="camera" rate="30.0">
+            <link name="Vehicle"/>
+            <origin rpy="3.14 0.0 0.0" xyz="0.0 0.0 -0.5"/>
+            <specs resolution_x="1280" resolution_y="720" horizontal_fov="80.0"/>
+            <ros_publisher topic="/catamaran/camera_cenital/image_raw"/>
+        </sensor>
+
+		<sensor name="camera_fisheye_front" type="camera" rate="30.0">
+            <link name="Vehicle"/>
+            <origin rpy="-2.35619 0.0 0.0" xyz="0.0 0.716169 -0.3"/>
+            <specs resolution_x="1280" resolution_y="720" horizontal_fov="120.0"/>
+            <ros_publisher topic="/catamaran/camera_fisheye_front/image_raw"/>
+        </sensor>
+
+		<sensor name="camera_fisheye_rear" type="camera" rate="30.0">
+            <link name="Vehicle"/>
+            <origin rpy="-2.35619 0.0 3.14" xyz="0.0 -0.75 -0.3"/>
+            <specs resolution_x="1280" resolution_y="720" horizontal_fov="120.0"/>
+            <ros_publisher topic="/catamaran/camera_fisheye_rear/image_raw"/>
+        </sensor>
+
+		<sensor name="camera_fisheye_left" type="camera" rate="30.0">
+            <link name="Vehicle"/>
+            <origin rpy="-2.35619 0.0 1.57" xyz="-0.78 0.0 -0.3"/>
+            <specs resolution_x="1280" resolution_y="720" horizontal_fov="120.0"/>
+            <ros_publisher topic="/catamaran/camera_fisheye_left/image_raw"/>
+        </sensor>
+
+		<sensor name="camera_fisheye_right" type="camera" rate="30.0">
+            <link name="Vehicle"/>
+            <origin rpy="-2.35619 0.0 -1.57" xyz="0.803243 0.0 -0.3"/>
+            <specs resolution_x="1280" resolution_y="720" horizontal_fov="120.0"/>
+            <ros_publisher topic="/catamaran/camera_fisheye_right/image_raw"/>
+        </sensor>
+
+
+        <world_transform xyz="1.0 1.0 -0.1" rpy="0.0 3.14 0.0"/>
+
+        <!-- Publicación de TF dinámico del base_link -->
+		<ros_subscriber thrusters="/catamaran/controller/thruster_setpoints_sim" forces="/catamaran/controller/thruster_manager/input_stamped"/>
+		<ros_publisher thrusters="/catamaran/controller/thruster_state" forces="/catamaran/controller/thruster_manager/output"/>
+        <ros_base_link_transforms publish="true"/>
+	</robot>
+</scenario>
